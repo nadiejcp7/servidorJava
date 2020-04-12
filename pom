@@ -1,0 +1,14 @@
+<dependencies>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-catalina</artifactId>
+            <version>8.5.50</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.10</version>
+        </dependency>
+    </dependencies>
+    
+    Add those dependencies to your pom.xml if you use maven. Otherwise, download those libraries to your proyect.
