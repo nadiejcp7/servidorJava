@@ -1,4 +1,16 @@
-<dependencies>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>imagina</groupId>
+    <artifactId>Servidor</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+    </properties>
+    <dependencies>
         <dependency>
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-catalina</artifactId>
@@ -9,6 +21,42 @@
             <artifactId>httpclient</artifactId>
             <version>4.5.10</version>
         </dependency>
+        <dependency>  
+            <groupId>com.google.zxing</groupId>  
+            <artifactId>core</artifactId>  
+            <version>3.3.0</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>com.google.zxing</groupId>  
+            <artifactId>javase</artifactId>  
+            <version>3.3.0</version>  
+        </dependency>  
     </dependencies>
-    
-    Add those dependencies to your pom.xml if you use maven. Otherwise, download those libraries to your proyect.
+    <build>
+        <plugins>           
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>imagina.servidoremapasc.Inicio</mainClass>
+                                </transformer>
+                            </transformers>
+                            <shadedArtifactAttached>true</shadedArtifactAttached>
+                            <shadedClassifierName>run</shadedClassifierName> <!-- Can be any name that makes sense -->
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <name>Servidor</name>
+</project>
