@@ -192,9 +192,9 @@ public class ServidorDescargarCargar extends HttpServlet {
                     + ".article .img{height:150px;}.article .nombre{font-size:12px}}");
             out.println("@media screen and (max-width:400px) {.seleccionar{font-size: 12px;}.cargar{font-size: 12px;}}");
             out.println("</style>");
-            out.println("<title>Kaala</title></head>");
+            out.println("<title>SERVIDOR</title></head>");
             out.println("<body>");
-            out.println("<header><h2 class=\"saludo\">Servidor de Jairo</h2>");
+            out.println("<header><h2 class=\"saludo\">Mi servidor</h2>");
             out.println("<h2 class=\"title saludo\">'el poderoso'</h2></header>");
             out.println("<form method=post enctype=multipart/form-data class=\"letra\">");
             out.println("<input class=\"seleccionar\" type=file name=fileName multiple/>");
